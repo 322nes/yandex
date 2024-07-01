@@ -31,18 +31,34 @@
 
 @mixin ff-golos($lh: 1.2, $fw: 600) {
   font-family: 'GolosText', sans-serif;
-  font-weight: var($fw);
-  line-height: var($lh);
+  font-weight: $fw;
+  line-height: $lh;
 }
 
 @mixin ff-mont($lh: 1.2) {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-  line-height: var($lh);
+  line-height: $lh;
 }
 
 @mixin ff-merr($lh: 1.2) {
   font-family: 'Merriweather', sans-serif;
   font-weight: 400;
-  line-height: var($lh);
+  line-height: $lh;
+}
+
+@mixin fonbef($height: 100%, $z: 150) {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $height;
+    background: url('../../../public/images/fon.png') no-repeat center center;
+    background-size: cover;
+    opacity: 0.2;
+    pointer-events: none;
+    z-index: $z;
+  }
 }

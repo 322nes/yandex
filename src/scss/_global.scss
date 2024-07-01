@@ -5,6 +5,7 @@
   --color-white: #ffffff;
   --color-red: #F54932;
   --color-blue: #3057A2;
+  --color-gray: #D0D0D0;
 }
 
 //--------------------------------------------------------------------------\\
@@ -14,7 +15,8 @@ html {
 }
 
 body {
-  background-color: var(--color-gray);
+  background-color: var(--color-write);
+  color: var(--color-black-text);
 }
 
 .wrapper {
@@ -24,9 +26,10 @@ body {
 }
 
 .container {
-  max-width: 1222px;
+  max-width: 1242px;
   height: 100%;
   margin: 0 auto;
+  padding: 0 10px;
 }
 
 .visually-hidden {

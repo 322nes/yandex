@@ -1,0 +1,215 @@
+.section-games {
+  margin-top: 80px;
+
+  .games {
+
+    &__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+
+      &-text {
+        max-width: 764px;
+        @include ff-merr(1.35);
+        @include font-size(36, 28);
+        text-transform: uppercase;
+
+        span {
+          color: var(--color-red);
+          font-weight: 700;
+          letter-spacing: 0.5px;
+        }
+      }
+
+      &-picture {
+        position: relative;
+        border-radius: 50%;
+        overflow: hidden;
+        @include fonbef;
+      }
+    }
+
+    &__seans {
+      margin-top: 64px;
+      display: flex;
+      justify-content: space-between;
+      column-gap: 44px;
+
+      .seans {
+
+        &__images {
+          width: 100%;
+          max-width: 474px;
+          height: 527px;
+          position: relative;
+          @include fonbef(527px, 500);
+
+          &-item {
+            position: absolute;
+
+
+            &:nth-child(1) {
+              z-index: 100;
+              top: 49%;
+              left: 48%;
+              rotate: 90deg;
+              translate: -50% -50%;
+            }
+
+            &:nth-child(2) {
+              z-index: 100;
+              top: 83px;
+              left: 292px;
+              translate: -130%;
+              rotate: 0deg;
+              opacity: 0;
+              transition: all 0.8s ease 0.4s;
+
+              &.show {
+                translate: 0%;
+                opacity: 1;
+                rotate: 90deg;
+              }
+            }
+
+            &:nth-child(3) {
+              z-index: 100;
+              top: -27px;
+              left: -27px;
+              scale: 0;
+              transition: all 0.8s ease 0.4s;
+
+              &.show {
+                scale: 1;
+
+              }
+            }
+
+            &:nth-child(4) {
+              z-index: 100;
+              top: 49%;
+              left: 51%;
+              translate: -50% -50%;
+            }
+
+            &:nth-child(5) {
+              z-index: 100;
+              top: 284px;
+              left: 0px;
+              rotate: -89deg;
+              scale: 0;
+              transition: all 0.8s ease 0.4s;
+
+              &.show {
+                scale: 1;
+
+              }
+            }
+
+            &:nth-child(6) {
+              z-index: 100;
+              top: 366px;
+              left: 98px;
+              rotate: 0deg;
+              transition: all 0.6s ease 0.4s;
+
+              &.show {
+                rotate: -35deg;
+              }
+            }
+
+            &:nth-child(7) {
+              z-index: 100;
+              top: 361px;
+              left: 250px;
+              rotate: 0deg;
+              transition: all 0.6s ease 0.4s;
+
+              &.show {
+                rotate: 40deg;
+              }
+            }
+          }
+        }
+
+        &__location {
+          max-width: 704px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          &-title {
+            max-width: 764px;
+            @include ff-merr(1.35);
+            @include font-size(36, 28);
+            text-transform: uppercase;
+
+            span {
+              color: var(--color-red);
+              font-weight: 700;
+              letter-spacing: 0.5px;
+            }
+          }
+
+          &-table {
+            width: 704px;
+            height: 248px;
+            @include ff-golos(1.2);
+            font-size: 20px;
+            border-collapse: collapse;
+            margin-top: 12px;
+
+            tr>td:first-child {
+              font-weight: 400;
+              opacity: 0.7;
+            }
+
+            tr>td:last-child {
+              font-weight: 600;
+              padding: 0px 15px;
+            }
+
+            tr {
+              border-bottom: 2px solid var(--color-gray);
+
+              &:last-child {
+                border-bottom: none;
+              }
+            }
+
+            td {
+              width: 306px;
+              border-right: 2px solid var(--color-gray);
+              padding: 16px 0;
+
+              &:last-child {
+                border-right: none;
+              }
+            }
+
+            span {
+              position: relative;
+
+              &:after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 81px;
+                height: 2px;
+                background-color: var(--color-red);
+              }
+            }
+          }
+
+          &-text {
+            @include ff-golos(1.2, 400);
+            @include font-size(20, 18);
+            color: var(--color-blue);
+          }
+        }
+      }
+    }
+  }
+}

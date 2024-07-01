@@ -1,0 +1,108 @@
+.section-people {
+  margin-top: 200px;
+
+  .people {
+
+    &__label {
+      display: flex;
+      justify-content: space-between;
+
+      &-title {
+        @include ff-merr(1.2);
+        @include font-size(53, 36);
+        text-transform: uppercase;
+        letter-spacing: 0.7px;
+      }
+
+      &-pagination {
+        display: flex;
+        align-items: center;
+
+
+        &--button {
+          width: 44px;
+          height: 44px;
+          background-color: var(--color-black-block);
+          border-radius: 50%;
+          position: relative;
+
+          &>img {
+            @include abs-center;
+          }
+        }
+
+        &--pages {
+          @include ff-golos(1.2, 400);
+          font-size: 16px;
+          color: var(--color-black-text);
+          padding: 0 16px;
+
+          &>span {
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+
+    &__slider {
+      margin-top: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+      &-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include ff-golos(1.2);
+      }
+
+      &-avatar {
+        width: 320px;
+        height: 320px;
+        border-radius: 50%;
+        background: url('../../../public/images/stampPaper.jpg') no-repeat;
+        background-size: cover;
+        @include flex-center;
+        overflow: hidden;
+
+        img {
+          margin-top: 20px;
+        }
+      }
+
+      &-title {
+        font-weight: 600;
+        font-size: 24px;
+        margin: 28px 0 6px;
+        color: var(--color-black-text);
+      }
+
+      &-subtitle {
+        font-weight: 400;
+        font-size: 20px;
+        color: var(--color-black-text);
+        opacity: 0.6;
+      }
+
+      &-link {
+        width: 113px;
+        height: 35px;
+        font-size: 16px;
+        font-weight: 500;
+        border: 1px solid var(--color-blue);
+        border-radius: 62px;
+        padding: 12px;
+        color: var(--color-blue);
+        @include flex-center;
+        margin-top: 20px;
+        transition: all 0.3s ease;
+
+        @include hover {
+          background: var(--color-blue);
+          color: var(--color-white);
+        }
+      }
+    }
+  }
+}

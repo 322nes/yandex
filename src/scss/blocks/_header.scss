@@ -1,5 +1,241 @@
 .header {
   width: 100%;
   height: 700px;
-  background-color: #aa692c;
+  background-color: #E9DED4;
+  overflow: hidden;
+  @include fonbef(700px, 150);
+
+  @include mobile {
+    min-height: 862px;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    top: 26px;
+    left: 10px;
+    z-index: 1000;
+  }
+
+  &__content {
+    max-width: 542px;
+    min-height: 444px;
+    margin-bottom: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 500;
+
+    @include mobile {
+      min-height: 393px;
+    }
+  }
+
+  &__title {
+    @include ff-merr(1.1);
+    @include font-size(60, 36);
+    text-transform: uppercase;
+
+    & p:nth-child(2) {
+      text-align: center;
+    }
+
+    & p:nth-child(3) {
+      text-align: end;
+    }
+
+    @include mobile {}
+  }
+
+  &__subtitle {
+    @include ff-golos(1.3, 400);
+    font-size: 18px;
+    text-align: center;
+    padding-bottom: 15px;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 16px;
+
+    @include mobile {
+      flex-direction: column;
+      row-gap: 14px;
+    }
+
+    &-item {
+      width: 100%;
+      height: 72px;
+      border-radius: 66px;
+      font-size: 16px;
+      @include ff-golos(1.3, 500);
+      border: 2px solid var(--color-black-block);
+      @include flex-center;
+      transition: all .3s ease;
+
+      span {
+        width: min-content;
+
+        &>span {
+          text-wrap: nowrap;
+        }
+
+      }
+
+      @include mobile {
+        height: 47px;
+
+        span {
+          text-wrap: nowrap;
+        }
+      }
+
+
+      &:nth-child(1) {
+        background-color: var(--color-black-block);
+        color: var(--color-white);
+
+        @include hover {
+          background-color: #FBCE51;
+          color: var(--color-black-text);
+          border: 2px solid #FBCE51;
+        }
+      }
+
+      &:nth-child(2) {
+        background: inherit;
+        color: var(--color-black-block);
+
+        @include hover {
+          background-color: var(--color-black-block);
+          color: var(--color-white);
+        }
+
+        @include laptop {
+          background: var(--color-white);
+          opacity: 0.9;
+        }
+
+      }
+    }
+  }
+
+  &__inner {
+    width: 100%;
+    height: 100%;
+    max-width: 680px;
+    position: relative;
+
+    &-item {
+      position: absolute;
+
+      &:nth-child(1) {
+        z-index: 100;
+        // top: 275px;
+        // right: 448px;
+        right: 65.5%;
+        // bottom: 24.5%;
+        bottom: 10.6em;
+        opacity: 0;
+        translate: 0 -130%;
+        rotate: 60deg;
+        @include responsive-img(104px, 256px);
+
+        &.show {
+          transition: all 1.2s ease 0.4s;
+          opacity: 1;
+          translate: 0px 0;
+          rotate: -6deg;
+        }
+      }
+
+      &:nth-child(2) {
+        z-index: 100;
+        // top: 170px;
+        // right: 102px;
+        right: 15%;
+        // bottom: 39.5%;
+        bottom: 17.2em;
+        opacity: 0;
+        translate: 0 130%;
+        rotate: -150deg;
+        @include responsive-img(114px, 253px);
+
+        &.show {
+          transition: all 1.1s ease 0.4s;
+          opacity: 1;
+          translate: 0px 0;
+          rotate: 8deg;
+        }
+      }
+
+      &:nth-child(3) {
+        z-index: 200;
+        right: 283px;
+        bottom: -38px;
+        opacity: 0;
+        translate: 130% 0;
+        rotate: 110deg;
+        @include responsive-img(154px, 244px);
+
+        &.show {
+          transition: all 1.2s ease 0.2s;
+          opacity: 1;
+          translate: 0px 0;
+          rotate: -11deg;
+        }
+      }
+
+      &:nth-child(4) {
+        z-index: 200;
+        right: -28px;
+        bottom: 19px;
+        opacity: 0;
+        translate: 130% 30%;
+        @include responsive-img(83px, 122px);
+
+        &.show {
+          transition: all 1.1s ease 0.4s;
+          opacity: 1;
+          translate: 0px 0;
+        }
+      }
+
+      &:nth-child(5) {
+        bottom: -1px;
+        right: -214px;
+        z-index: 100;
+        @include responsive-img(1627px, 442px);
+      }
+
+      &:nth-child(6) {
+        top: -102px;
+        right: -98px;
+        z-index: 1;
+        @include responsive-img(780px, 780px);
+        animation: rotateAnim 30s linear infinite;
+
+        @keyframes rotateAnim {
+          from {
+            transform: rotate(0deg);
+          }
+
+          to {
+            transform: rotate(-360deg);
+          }
+        }
+      }
+
+    }
+  }
 }
