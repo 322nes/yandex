@@ -82,6 +82,7 @@
       border: 2px solid var(--color-black-block);
       @include flex-center;
       transition: all .3s ease;
+      text-align: center;
 
       span {
         width: min-content;

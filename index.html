@@ -28,8 +28,8 @@
             Оплатите взнос на телеграммы для организации Международного васюкинского турнира по шахматам
           </p>
           <div class="header__button">
-            <button class="header__button-item"><span>Поддержать <span>шахматную мысль</span></span></button>
-            <button class="header__button-item"><span>Подробнее о турнире</span></button>
+            <a class="header__button-item" href="#misli"><span>Поддержать <span>шахматную мысль</span></span></a>
+            <a class="header__button-item" href="#tournament"><span>Подробнее о турнире</span></a>
           </div>
         </div>
         <div class="header__inner">
@@ -62,7 +62,7 @@
       <section class="section section-games container">
         <div class="games">
           <div class="games__header">
-            <p class="games__header-text">
+            <p class="games__header-text" id="misli">
               Чтобы поддержать Международный васюкинский турнир посетите лекцию на тему:
               <span>«Плодотворная дебютная идея»</span>
             </p>
@@ -121,7 +121,7 @@
       </section>
 
       <section class="section section-stage container">
-        <div class="stage__heading">
+        <div class="stage__heading" id="tournament">
           <h2 class="stage__heading-title">Этапы преображения <br>Васюков</h2>
           <h3 class="stage__heading-subtitle">Будущие источники обогащения васюкинцев</h3>
         </div>
@@ -168,71 +168,75 @@
         <div class="people__label">
           <h2 class="people__label-title">Участники турнира</h2>
           <div class="people__label-pagination">
-            <button class="people__label-pagination--button" type="button">
+            <button class="people__label-pagination--button" id="prevBtn" type="button">
               <img src="public/images/icon/arrow-left.svg" alt="" width="9" height="17" loading="lazy">
             </button>
-            <p class="people__label-pagination--pages">3 <span>/6</span></p>
-            <button class="people__label-pagination--button" type="button">
+            <p class="people__label-pagination--pages"><span id="currentPage">1</span> <span id="totalPages">/6</span>
+            </p>
+
+            <button class="people__label-pagination--button" id="nextBtn" type="button">
               <img src="public/images/icon/arrow-right.svg" alt="" width="9" height="17" loading="lazy">
             </button>
           </div>
         </div>
-        <div class="people__slider">
+        <div class="people__slider-container">
+          <div class="people__slider" id="carusel">
 
-          <div class="people__slider-item">
-            <div class="people__slider-avatar">
-              <img src="./public/images/avatar.svg" alt="avatar" width="293" height="333" loading="lazy">
+            <div class="people__slider-item">
+              <div class="people__slider-avatar">
+                <img src="./public/images/avatar.svg" alt="avatar" width="293" height="333" loading="lazy">
+              </div>
+              <h4 class="people__slider-title">Хозе-Рауль Капабланка</h4>
+              <p class="people__slider-subtitle">Чемпион мира по шахматам</p>
+              <a class="people__slider-link" href="#" alt="Подробнее">Подробнее</a>
             </div>
-            <h4 class="people__slider-title">Хозе-Рауль Капабланка</h4>
-            <p class="people__slider-subtitle">Чемпион мира по шахматам</p>
-            <a class="people__slider-link" href="#" alt="Подробнее">Подробнее</a>
+
+            <div class="people__slider-item">
+              <div class="people__slider-avatar">
+                <img src="./public/images/avatar.svg" alt="avatar" width="293" height="333" loading="lazy">
+              </div>
+              <h4 class="people__slider-title">Эммануил Ласкер</h4>
+              <p class="people__slider-subtitle">Чемпион мира по шахматам</p>
+              <a class="people__slider-link" href="#" alt="Подробнее">Подробнее</a>
+            </div>
+
+            <div class="people__slider-item">
+              <div class="people__slider-avatar">
+                <img src="./public/images/avatar.svg" alt="avatar" width="293" height="333" loading="lazy">
+              </div>
+              <h4 class="people__slider-title">Александр Алехин</h4>
+              <p class="people__slider-subtitle">Чемпион мира по шахматам</p>
+              <a class="people__slider-link" href="#" alt="Подробнее">Подробнее</a>
+            </div>
+
+            <div class="people__slider-item">
+              <div class="people__slider-avatar">
+                <img src="./public/images/avatar.svg" alt="avatar" width="293" height="333" loading="lazy">
+              </div>
+              <h4 class="people__slider-title">Арон Нимцович</h4>
+              <p class="people__slider-subtitle">Чемпион мира по шахматам</p>
+              <a class="people__slider-link" href="#" alt="Подробнее">Подробнее</a>
+            </div>
+
+            <div class="people__slider-item">
+              <div class="people__slider-avatar">
+                <img src="./public/images/avatar.svg" alt="avatar" width="293" height="333" loading="lazy">
+              </div>
+              <h4 class="people__slider-title">Рихард Рети</h4>
+              <p class="people__slider-subtitle">Чемпион мира по шахматам</p>
+              <a class="people__slider-link" href="#" alt="Подробнее">Подробнее</a>
+            </div>
+
+            <div class="people__slider-item">
+              <div class="people__slider-avatar">
+                <img src="./public/images/avatar.svg" alt="avatar" width="293" height="333" loading="lazy">
+              </div>
+              <h4 class="people__slider-title">Остап Бендер</h4>
+              <p class="people__slider-subtitle">Гроссмейстер</p>
+              <a class="people__slider-link" href="#" alt="Подробнее">Подробнее</a>
+            </div>
+
           </div>
-
-          <div class="people__slider-item">
-            <div class="people__slider-avatar">
-              <img src="./public/images/avatar.svg" alt="avatar" width="293" height="333" loading="lazy">
-            </div>
-            <h4 class="people__slider-title">Эммануил Ласкер</h4>
-            <p class="people__slider-subtitle">Чемпион мира по шахматам</p>
-            <a class="people__slider-link" href="#" alt="Подробнее">Подробнее</a>
-          </div>
-
-          <div class="people__slider-item">
-            <div class="people__slider-avatar">
-              <img src="./public/images/avatar.svg" alt="avatar" width="293" height="333" loading="lazy">
-            </div>
-            <h4 class="people__slider-title">Александр Алехин</h4>
-            <p class="people__slider-subtitle">Чемпион мира по шахматам</p>
-            <a class="people__slider-link" href="#" alt="Подробнее">Подробнее</a>
-          </div>
-
-          <!-- <div class="people__slider-item">
-            <div class="people__slider-avatar">
-              <img src="./public/images/avatar.svg" alt="avatar" width="293" height="333" loading="lazy">
-            </div>
-            <h4 class="people__slider-title">Арон Нимцович</h4>
-            <p class="people__slider-subtitle">Чемпион мира по шахматам</p>
-            <a class="people__slider-link" href="#" alt="Подробнее">Подробнее</a>
-          </div>
-
-          <div class="people__slider-item">
-            <div class="people__slider-avatar">
-              <img src="./public/images/avatar.svg" alt="avatar" width="293" height="333" loading="lazy">
-            </div>
-            <h4 class="people__slider-title">Рихард Рети</h4>
-            <p class="people__slider-subtitle">Чемпион мира по шахматам</p>
-            <a class="people__slider-link" href="#" alt="Подробнее">Подробнее</a>
-          </div>
-
-          <div class="people__slider-item">
-            <div class="people__slider-avatar">
-              <img src="./public/images/avatar.svg" alt="avatar" width="293" height="333" loading="lazy">
-            </div>
-            <h4 class="people__slider-title">Остап Бендер</h4>
-            <p class="people__slider-subtitle">Гроссмейстер</p>
-            <a class="people__slider-link" href="#" alt="Подробнее">Подробнее</a>
-          </div> -->
-
         </div>
       </section>
 

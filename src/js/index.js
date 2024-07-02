@@ -31,50 +31,36 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const carousel = document.getElementById('carusel');
+  const items = document.querySelectorAll('.people__slider-item');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const currentPage = document.getElementById('currentPage');
+  const totalPagesElement = document.getElementById('totalPages');
+  const totalItems = items.length;
+  let currentIndex = 0;
 
-// document.addEventListener('DOMContentLoaded', () => {
-//   const header = document.querySelector('.header');
-//   const scrollItems = document.querySelectorAll('.header__inner-item');
+  totalPagesElement.textContent = `/ ${totalItems}`;
 
-//   const scrollAnimation = () => {
-//     const windowHeight = window.innerHeight;
-//     const scrollTop = window.scrollY;
+  const updateSlider = () => {
+    const offset = (currentIndex * 100 / 3);
+    carousel.style.transform = `translateX(-${offset}%)`;
+    currentPage.textContent = currentIndex + 1;
+  };
 
-//     scrollItems.forEach(el => {
-//       const elementTop = el.getBoundingClientRect().top + scrollTop;
-//       const elementBottom = elementTop + el.clientHeight;
+  const nextSlide = () => {
+    currentIndex = (currentIndex + 1) % totalItems;
+    updateSlider();
+  };
 
-//       if (elementTop < scrollTop + windowHeight && elementBottom > scrollTop) {
-//         el.classList.add('show');
-//       } else {
-//         el.classList.remove('show');
-//       }
-//     });
-//   };
+  const prevSlide = () => {
+    currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+    updateSlider();
+  };
 
-//   const headerFixed = () => {
-//     const hero = document.querySelector('.hero'); // Элемент hero для фиксирования заголовка
-//     const scrollTop = window.scrollY;
-//     const heroHeight = hero ? hero.offsetHeight : 0;
+  prevBtn.addEventListener('click', prevSlide);
+  nextBtn.addEventListener('click', nextSlide);
 
-//     if (scrollTop >= heroHeight / 2) {
-//       header.classList.add('fixed');
-//       if (hero) {
-//         hero.style.marginTop = `${header.offsetHeight}px`;
-//       }
-//     } else {
-//       header.classList.remove('fixed');
-//       if (hero) {
-//         hero.style.marginTop = '0px';
-//       }
-//     }
-//   };
-
-//   headerFixed();
-//   scrollAnimation();
-
-//   window.addEventListener('scroll', () => {
-//     headerFixed();
-//     scrollAnimation();
-//   });
-// });
+  setInterval(nextSlide, 4000); // Автоматическая смена каждые 4 секунды
+});
