@@ -7,8 +7,8 @@ $laptop: 1024px;
 $tablet-above: 769px;
 $tablet: 768px;
 
-$mobile-above: 376px;
-$mobile: 375px;
+$mobile-above: 377px;
+$mobile: 376px;
 
 @mixin desktop-above {
   @media (min-width: $desktop-above) {
@@ -55,30 +55,5 @@ $mobile: 375px;
 @mixin mobile {
   @media (max-width: $mobile) {
     @content;
-  }
-}
-
-@mixin responsive-img($width, $height) {
-  width: $width;
-  height: $height;
-
-  @media (max-width: $desktop) {
-    width: calc($width * 0.9); // Уменьшаем на 10% для экрана <= 1200px
-    height: calc($height * 0.9);
-  }
-
-  @media (max-width: $laptop) {
-    width: calc($width * 0.8); // Уменьшаем на 20% для экрана <= 992px
-    height: calc($height * 0.8);
-  }
-
-  @media (max-width: $tablet) {
-    width: calc($width * 0.7); // Уменьшаем на 30% для экрана <= 768px
-    height: calc($height * 0.7);
-  }
-
-  @media (max-width: $mobile) {
-    width: calc($width * 0.6); // Уменьшаем на 40% для экрана <= 576px
-    height: calc($height * 0.6);
   }
 }

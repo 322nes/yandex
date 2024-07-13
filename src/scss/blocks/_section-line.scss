@@ -7,6 +7,18 @@
     background-color: var(--color-red);
     white-space: nowrap;
 
+    @include laptop {
+      height: 50px;
+    }
+
+    @include tablet {
+      height: 44px;
+    }
+
+    @include mobile {
+      height: 38px;
+    }
+
     &__wrapper {
       height: 100%;
       display: inline-block;
@@ -47,8 +59,8 @@
       }
     }
   }
-}
 
-  #footer-line {
+  &#footer-line {
     margin-top: 140px;
   }
+}

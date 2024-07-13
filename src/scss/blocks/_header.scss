@@ -6,7 +6,7 @@
   @include fonbef(700px, 150);
 
   @include mobile {
-    min-height: 862px;
+    height: 774px;
   }
 
   &__wrapper {
@@ -14,8 +14,13 @@
     align-items: center;
     position: relative;
 
-    @include mobile {
+    @include tablet {
       flex-direction: column;
+
+    }
+
+    @include mobile {
+      height: 774px;
     }
   }
 
@@ -24,6 +29,16 @@
     top: 26px;
     left: 10px;
     z-index: 1000;
+
+    @include tablet {
+      top: 18px;
+      left: 20px;
+
+      &-image {
+        width: 213px;
+        height: 32px;
+      }
+    }
   }
 
   &__content {
@@ -35,7 +50,13 @@
     justify-content: space-between;
     z-index: 500;
 
+    @include tablet {
+      margin: 90px 0 0;
+      min-height: 500px;
+    }
+
     @include mobile {
+      max-width: 335px;
       min-height: 393px;
     }
   }
@@ -53,7 +74,18 @@
       text-align: end;
     }
 
-    @include mobile {}
+    @include laptop {
+      max-width: 415px;
+    }
+
+    @include tablet {
+      max-width: none;
+      @include font-size(90, 36);
+    }
+
+    @include mobile {
+      max-width: 335px;
+    }
   }
 
   &__subtitle {
@@ -61,6 +93,11 @@
     font-size: 18px;
     text-align: center;
     padding-bottom: 15px;
+
+    @include mobile {
+      text-align: start;
+      padding: 7px 0 11px;
+    }
   }
 
   &__button {
@@ -68,7 +105,7 @@
     justify-content: space-between;
     column-gap: 16px;
 
-    @include mobile {
+    @include tablet {
       flex-direction: column;
       row-gap: 14px;
     }
@@ -83,14 +120,17 @@
       @include flex-center;
       transition: all .3s ease;
       text-align: center;
-
+      
       span {
         width: min-content;
-
+        
         &>span {
           text-wrap: nowrap;
         }
-
+        
+      }
+      @include tablet {
+        height: 57px;
       }
 
       @include mobile {
@@ -106,11 +146,13 @@
         background-color: var(--color-black-block);
         color: var(--color-white);
 
+
         @include hover {
           background-color: #FBCE51;
           color: var(--color-black-text);
           border: 2px solid #FBCE51;
         }
+
       }
 
       &:nth-child(2) {
@@ -137,20 +179,24 @@
     max-width: 680px;
     position: relative;
 
+    @include tablet {
+      opacity: 0.8;
+    }
+
+    @include mobile {
+      opacity: 1;
+    }
+
     &-item {
       position: absolute;
 
       &:nth-child(1) {
         z-index: 100;
-        // top: 275px;
-        // right: 448px;
-        right: 65.5%;
-        // bottom: 24.5%;
-        bottom: 10.6em;
+        right: 448px;
+        bottom: 170px;
         opacity: 0;
         translate: 0 -130%;
         rotate: 60deg;
-        @include responsive-img(104px, 256px);
 
         &.show {
           transition: all 1.2s ease 0.4s;
@@ -158,25 +204,62 @@
           translate: 0px 0;
           rotate: -6deg;
         }
+
+        @include laptop {
+          width: 90px;
+          height: 190px;
+          right: 350px;
+          bottom: 123px;
+        }
+
+        @include tablet {
+          width: 60px;
+          height: 160px;
+          right: 250px;
+          bottom: 113px;
+        }
+
+        @include mobile {
+          width: 48px;
+          height: 117px;
+        }
       }
 
       &:nth-child(2) {
         z-index: 100;
-        // top: 170px;
-        // right: 102px;
-        right: 15%;
-        // bottom: 39.5%;
-        bottom: 17.2em;
+        right: 102px;
+        bottom: 39.5%;
         opacity: 0;
         translate: 0 130%;
         rotate: -150deg;
-        @include responsive-img(114px, 253px);
 
         &.show {
           transition: all 1.1s ease 0.4s;
           opacity: 1;
           translate: 0px 0;
           rotate: 8deg;
+
+          @include mobile {
+            rotate: 13deg;
+          }
+        }
+
+        @include laptop {
+          width: 95px;
+          height: 195px;
+          bottom: 250px;
+        }
+
+        @include tablet {
+          width: 65px;
+          height: 165px;
+          right: 82px;
+          bottom: 166px;
+        }
+
+        @include mobile {
+          width: 47px;
+          height: 105px;
         }
       }
 
@@ -187,13 +270,30 @@
         opacity: 0;
         translate: 130% 0;
         rotate: 110deg;
-        @include responsive-img(154px, 244px);
 
         &.show {
           transition: all 1.2s ease 0.2s;
           opacity: 1;
           translate: 0px 0;
           rotate: -11deg;
+        }
+
+        @include laptop {
+          width: 124px;
+          height: 214px;
+        }
+
+        @include tablet {
+          width: 94px;
+          height: 174px;
+          right: 210px;
+        }
+
+        @include mobile {
+          width: 77px;
+          height: 122px;
+          right: 133px;
+          bottom: -15px;
         }
       }
 
@@ -203,12 +303,25 @@
         bottom: 19px;
         opacity: 0;
         translate: 130% 30%;
-        @include responsive-img(83px, 122px);
 
         &.show {
           transition: all 1.1s ease 0.4s;
           opacity: 1;
           translate: 0px 0;
+        }
+
+        @include laptop {
+          width: 68px;
+          height: 104px;
+        }
+
+        @include tablet {
+          width: 50px;
+          height: 80px;
+        }
+
+        @include mobile {
+          display: none;
         }
       }
 
@@ -216,14 +329,29 @@
         bottom: -1px;
         right: -214px;
         z-index: 100;
-        @include responsive-img(1627px, 442px);
+
+        @include laptop {
+          width: 1400px;
+          height: 380px;
+        }
+
+        @include tablet {
+          width: 1150px;
+          height: 300px;
+        }
+
+        @include mobile {
+          width: 886px;
+          height: 240px;
+          right: -118px;
+          bottom: 2px;
+        }
       }
 
       &:nth-child(6) {
-        top: -102px;
+        bottom: 22px;
         right: -98px;
         z-index: 1;
-        @include responsive-img(780px, 780px);
         animation: rotateAnim 30s linear infinite;
 
         @keyframes rotateAnim {
@@ -234,6 +362,23 @@
           to {
             transform: rotate(-360deg);
           }
+        }
+
+        @include laptop {
+          width: 680px;
+          height: 680px;
+        }
+
+        @include tablet {
+          width: 500px;
+          height: 500px;
+        }
+
+        @include mobile {
+          width: 350px;
+          height: 350px;
+          right: 12px;
+          bottom: 41px;
         }
       }
 
